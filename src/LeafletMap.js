@@ -69,7 +69,7 @@ class LeafletMap extends Component {
 
   updateMarkers(markersData) {
     this.layerMarkers.clearLayers();
-    L.geoJSON(markersData , {
+   this.layerMarkers = L.geoJSON(markersData , {
         pointToLayer: function (feature, latlng) 
           {//wstawia marker w postaci okręgu
             return L.circleMarker(latlng, 
@@ -77,12 +77,13 @@ class LeafletMap extends Component {
             }
       }
       ).addTo(this.map);
+
   }
 
   componentDidUpdate({obiekty, geodata}) {
   // check if data has changed
       if (this.props.obiekty !== geodata) {
-        this.layerMarkers.clearLayers();
+        
         this.updateMarkers(this.props.obiekty);
       }
   }//koniec componetdidupdate
