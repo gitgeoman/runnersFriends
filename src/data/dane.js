@@ -6,7 +6,7 @@ export const geojsonFeature = {
         "properties": {
                       "id": 1,
                       "description": {
-                                    "name":"Nazwa obiektu",
+                                    "name":"Jane Doe",
                                     "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 1 "
                                     },
                                     
@@ -42,7 +42,7 @@ export const geojsonFeature = {
             "properties": {
         "id": 2,
          "description": {
-                                    "name":"Nazwa obiektu",
+                                    "name":"John Simpson",
                                     "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 1 "
                                     },
         "miniaturka" : "http://pngimg.com/uploads/globe/globe_PNG62.png",
@@ -77,7 +77,7 @@ export const geojsonFeature = {
       "properties": {
         "id": 3,
          "description": {
-                                    "name":"Nazwa obiektu",
+                                    "name":"Geralt of Rivia",
                                     "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 1 "
                                     },
         "miniaturka" : "http://pngimg.com/uploads/globe/globe_PNG62.png",
@@ -112,7 +112,7 @@ export const geojsonFeature = {
             "properties": {
         "id": 4,
         "description": {
-                                    "name":"Nazwa obiektu",
+                                    "name":"John Snow",
                                     "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 1 "
                                     },
         "miniaturka" : "http://pngimg.com/uploads/globe/globe_PNG62.png",
@@ -147,7 +147,7 @@ export const geojsonFeature = {
            "properties": {
         "id": 5,
         "description": {
-                                    "name":"Nazwa obiektu",
+                                    "name":"Batman",
                                     "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 1 "
                                     },
         "miniaturka" : "http://pngimg.com/uploads/globe/globe_PNG62.png",
@@ -182,7 +182,7 @@ export const geojsonFeature = {
         "properties": {
           "id": 6,
            "description": {
-                                    "name":"Nazwa obiektu",
+                                    "name":"Zawisza",
                                     "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 1 "
                                     },
           "miniaturka" : "http://pngimg.com/uploads/globe/globe_PNG62.png",
@@ -217,7 +217,7 @@ export const geojsonFeature = {
         "properties": {
           "id": 7,
            "description": {
-                                    "name":"Nazwa obiektu",
+                                    "name":"Ragnar",
                                     "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 1 "
                                     },
           "miniaturka" : "http://pngimg.com/uploads/globe/globe_PNG62.png",
@@ -252,7 +252,7 @@ export const geojsonFeature = {
       "properties": {
         "id": 8,
          "description": {
-                                    "name":"Nazwa obiektu",
+                                    "name":"Farurej",
                                     "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 1 "
                                     },
         "miniaturka" : "http://pngimg.com/uploads/globe/globe_PNG62.png",

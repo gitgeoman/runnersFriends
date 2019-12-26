@@ -7,7 +7,8 @@ import 'tachyons';
 
 //my imports
 import GroupOfBlocks from './GroupOfBlock.js';
-import {geojsonFeature} from './dane.js';
+//data import
+import {geojsonFeature} from './data/dane.js';
 
 import LeafletMap from './LeafletMap';
 
@@ -16,7 +17,7 @@ ReactDOM.render(
 		<div className='vh-25'></div>
 		<div className='dib'>
 			<GroupOfBlocks obiekty={geojsonFeature} />
-			<LeafletMap />
+			<LeafletMap obiekty={geojsonFeature}/>
 		</div>
 	</div>, document.getElementById('root'));
 
