@@ -4,22 +4,12 @@ import './index.css';
 //import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'tachyons';
+import App from './App';
 
-//my imports
-import GroupOfBlocks from './GroupOfBlock.js';
-//data import
-import {geojsonFeature} from './data/dane.js';
-
-import LeafletMap from './LeafletMap';
 
 ReactDOM.render(
-	<div>
-		<div className='vh-25'></div>
-		<div className='dib'>
-			<GroupOfBlocks obiekty={geojsonFeature} />
-			<LeafletMap obiekty={geojsonFeature}/>
-		</div>
-	</div>, document.getElementById('root'));
+	<App />
+, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

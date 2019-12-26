@@ -4,11 +4,11 @@ import './GroupOfBlock.css';
 
 const GroupOfBlocks =({obiekty})=>{
 	//console.log(obiekty.features);
-	let arrayObjects = obiekty.features;//tutaj tworze tabele
+	//let arrayObjects = obiekty.features;//tutaj tworze tabele
 	return (
 		<div id="boxGroup" className='fl w-50 pa2 vh-100'> 
 			{//https://tachyons.io/docs/layout/grid/
-				arrayObjects.map((item, i)=>{
+				obiekty.map((item, i)=>{
 					return (
 						<Block 
 							key={i}
