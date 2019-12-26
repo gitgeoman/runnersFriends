@@ -33,14 +33,14 @@ class App extends Component{
     )
    console.log(filteredData);
     return (
-      <div className='tc'>
+      <div >
         
         <div id='logo Nazwa'className='vh-25'></div>
         <SearchBox 
             searchChangeAtribute={this.onSearchField}
         />
         
-        <div className='dib'>
+        <div className='dib w-100'>
           <GroupOfBlocks 
             obiekty={filteredData} 
         />

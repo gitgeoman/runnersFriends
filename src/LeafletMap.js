@@ -82,13 +82,14 @@ class LeafletMap extends Component {
   componentDidUpdate({obiekty, geodata}) {
   // check if data has changed
       if (this.props.obiekty !== geodata) {
+        this.layerMarkers.clearLayers();
         this.updateMarkers(this.props.obiekty);
       }
   }//koniec componetdidupdate
 
 
   render() {
-    return <div className='fl w-50 pa2 vh-75'id="map"></div>
+    return <div className='fl w-50 pa2 vh-75' id="map"></div>
   }
 }
 
