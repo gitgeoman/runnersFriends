@@ -4,8 +4,9 @@ import React, {Component} from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 //import danych
-import {myRun} from './data/runningData.js';
+import {myRun} from './data/runningData.js'; //Multiline
 import {myRunPoints} from './data/runningDataPoints';
+
 //naprawa zwalonych ikonek
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
@@ -14,7 +15,6 @@ let DefaultIcon = L.icon({
             shadowUrl: iconShadow
         });
         L.Marker.prototype.options.icon = DefaultIcon;
-
 
 class LeafletMap extends Component {
   componentDidMount() {
@@ -67,31 +67,27 @@ class LeafletMap extends Component {
 */
   } //koniec Component didMount
 
-  updateMarkers(markersData) {
-    this.layerMarkers.clearLayers();
-   this.layerMarkers = L.geoJSON(markersData , {
-        pointToLayer: function (feature, latlng) 
-          {//wstawia marker w postaci okręgu
-            return L.circleMarker(latlng, 
-            ).bindPopup(feature.properties.description.name);
-            }
-      }
-      ).addTo(this.map);
+    updateMarkers(markersData) {
+      this.layerMarkers.clearLayers();
+     this.layerMarkers = L.geoJSON(markersData , {
+          pointToLayer: function (feature, latlng) 
+            {//wstawia marker w postaci okręgu
+              return L.circleMarker(latlng, 
+              ).bindPopup(feature.properties.description.name);
+              }
+        }
+        ).addTo(this.map);
+    }
 
-  }
-
-  componentDidUpdate({obiekty, geodata}) {
-  // check if data has changed
-      if (this.props.obiekty !== geodata) {
-        
-        this.updateMarkers(this.props.obiekty);
-      }
-  }//koniec componetdidupdate
-
+    componentDidUpdate({obiekty, geodata}) {
+    // check if data has changed -->> sprawdzam co sie zmieniło w danych i wyzwalam funkcję
+        if (this.props.obiekty !== geodata) {  
+          this.updateMarkers(this.props.obiekty);
+        }
+    }//koniec componetdidupdate
 
   render() {
     return <div className='fl w-50 pa2 vh-75' id="map"></div>
   }
 }
-
 export default LeafletMap;
