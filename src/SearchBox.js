@@ -6,7 +6,7 @@ const SearchBox =({searchfield,searchChangeAtribute})=>{
 			<input 
 				className='pa3 ba b--green bg-lightest-blue'
 				type='search'
-				placeholder='search in your results by name'
+				placeholder='search users by name'
 				onChange={searchChangeAtribute}
 			/>
 		</div>

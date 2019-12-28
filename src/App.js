@@ -19,13 +19,11 @@ class App extends Component{
   }
 
   onSearchField=(event)=>{
-      
       this.setState({searchfield:event.target.value})
 
   };
 
   render(){
-
     const filteredData = this.state.obiekty.filter((obiekty)=>{
       return obiekty.properties.description.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
     }
@@ -34,25 +32,15 @@ class App extends Component{
    console.log(filteredData);
     return (
       <div >
-        
-        <div id='logo Nazwa'className='vh-25'></div>
-        <SearchBox 
-            searchChangeAtribute={this.onSearchField}
-        />
-        
+        <div id='logo Nazwa'className='vh-25 f1 '>Funky name</div>
+        <SearchBox searchChangeAtribute={this.onSearchField}/>
         <div className='dib w-100'>
-          <GroupOfBlocks 
-            obiekty={filteredData} 
-        />
-          <LeafletMap 
-            obiekty={filteredData}
-          />
+          <GroupOfBlocks obiekty={filteredData}/>
+          <LeafletMap obiekty={filteredData}/>
         </div>
       </div>
     )  
   }
 } 
-
-
 
 export default App;
