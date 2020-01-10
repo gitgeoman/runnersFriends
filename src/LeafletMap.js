@@ -10,11 +10,18 @@ import {myRunPoints} from './data/runningDataPoints';
 //naprawa zwalonych ikonek
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+
+
+
 let DefaultIcon = L.icon({
             iconUrl: icon,
             shadowUrl: iconShadow
         });
         L.Marker.prototype.options.icon = DefaultIcon;
+
+
+
+
 
 class LeafletMap extends Component {
   componentDidMount() {
@@ -31,12 +38,16 @@ class LeafletMap extends Component {
     
     //obiekt geojson przepisany do zmiennej
     let geodata = this.props.obiekty; // tak odwołuję się do obiektu który jest wysłany przez rodzica
+    let popupOBJECTID = this.props.hoverID;
+
       
     this.layerMarkers=L.geoJSON(geodata , {
-        pointToLayer: function (feature, latlng) 
-          {//wstawia marker w postaci okręgu
-            return L.circleMarker(latlng, 
-            ).bindPopup(feature.properties.description.name);
+        pointToLayer: function (feature, latlng) {//wstawia marker w postaci okręgu
+            return L.circleMarker(latlng
+            ).bindPopup(feature.properties.description.name)
+            //.on('mouseover', function(e){this.openPopup()})
+            //.on('mouseout', function(e){this.closePopup()})
+            ;
             }
       }
       ).addTo(this.map);
@@ -76,14 +87,24 @@ class LeafletMap extends Component {
               ).bindPopup(feature.properties.description.name);
               }
         }
-        ).addTo(this.map);
+       )
+     .addTo(this.map);
     }
+
 
     componentDidUpdate({obiekty, geodata}) {
     // check if data has changed -->> sprawdzam co sie zmieniło w danych i wyzwalam funkcję
         if (this.props.obiekty !== geodata) {  
           this.updateMarkers(this.props.obiekty);
         }
+
+
+        /*
+        if (this.props.hoverID!=='')
+          { if (this.props.hoverID!== this.popupOBJECTID){console.log('duap')}
+          }*/
+       
+
     }//koniec componetdidupdate
 
   render() {

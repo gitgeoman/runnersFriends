@@ -14,7 +14,9 @@ class App extends Component{
     super()
     this.state={
         searchfield:'',
-        obiekty: geojsonFeature.features
+        obiekty: geojsonFeature.features,
+        hoverID:''
+
     }
   }
 
@@ -22,6 +24,10 @@ class App extends Component{
       this.setState({searchfield:event.target.value})
 
   };
+
+  onMouseOver=(data)=>{
+      this.setState({hoverID:data.target.id})
+  }
 
   render(){
     const filteredData = this.state.obiekty.filter((obiekty)=>{
@@ -35,8 +41,8 @@ class App extends Component{
         <div id='logo Nazwa'className='vh-25 f1 '>Funky name</div>
         <SearchBox searchChangeAtribute={this.onSearchField}/>
         <div className='dib w-100'>
-          <GroupOfBlocks obiekty={filteredData}/>
-          <LeafletMap obiekty={filteredData}/>
+          <GroupOfBlocks obiekty={filteredData} onClickEvent={this.onMouseOver}/>
+          <LeafletMap obiekty={filteredData} hoverID={this.state.hoverID}/>
         </div>
       </div>
     )  
