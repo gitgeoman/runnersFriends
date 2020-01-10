@@ -39,8 +39,9 @@ class LeafletMap extends Component {
     //obiekt geojson przepisany do zmiennej
     let geodata = this.props.obiekty; // tak odwołuję się do obiektu który jest wysłany przez rodzica
     let popupOBJECTID = this.props.hoverID;
+    
 
-      
+
     this.layerMarkers=L.geoJSON(geodata , {
         pointToLayer: function (feature, latlng) {//wstawia marker w postaci okręgu
             return L.circleMarker(latlng
@@ -80,7 +81,7 @@ class LeafletMap extends Component {
 
     updateMarkers(markersData) {
       this.layerMarkers.clearLayers();
-     this.layerMarkers = L.geoJSON(markersData , {
+      this.layerMarkers = L.geoJSON(markersData , {
           pointToLayer: function (feature, latlng) 
             {//wstawia marker w postaci okręgu
               return L.circleMarker(latlng, 
@@ -92,17 +93,30 @@ class LeafletMap extends Component {
     }
 
 
-    componentDidUpdate({obiekty, geodata}) {
+
+    createMarker(obiekt){
+
+      this.newPopup =  L.popup()
+      .setLatLng([obiekt.geometry.coordinates[1],obiekt.geometry.coordinates[0]])
+      .setContent(obiekt.properties.description.name)
+      .openOn(this.map);
+    }
+
+
+    componentDidUpdate({obiekty, geodata, popupOBJECTID}) {
     // check if data has changed -->> sprawdzam co sie zmieniło w danych i wyzwalam funkcję
         if (this.props.obiekty !== geodata) {  
           this.updateMarkers(this.props.obiekty);
         }
 
+        if (this.props.hoverID){
+          //console.log(this.props.obiekty[aaa].geometry.coordinates);
+          this.createMarker(this.props.obiekty[this.props.hoverID]);
 
-        /*
-        if (this.props.hoverID!=='')
-          { if (this.props.hoverID!== this.popupOBJECTID){console.log('duap')}
-          }*/
+        }
+
+
+  
        
 
     }//koniec componetdidupdate

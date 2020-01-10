@@ -25,8 +25,9 @@ class App extends Component{
 
   };
 
-  onMouseOver=(data)=>{
-      this.setState({hoverID:data.target.id})
+  onMouseHover=(data)=>{
+      this.setState({hoverID:(data.target.id)?data.target.id:''})
+      console.log(this.state.hoverID);
   }
 
   render(){
@@ -35,13 +36,13 @@ class App extends Component{
     }
  
     )
-   console.log(filteredData);
+//   console.log(filteredData);
     return (
       <div >
         <div id='logo Nazwa'className='vh-25 f1 '>Funky name</div>
         <SearchBox searchChangeAtribute={this.onSearchField}/>
         <div className='dib w-100'>
-          <GroupOfBlocks obiekty={filteredData} onClickEvent={this.onMouseOver}/>
+          <GroupOfBlocks obiekty={filteredData} onClickEvent={this.onMouseHover}/>
           <LeafletMap obiekty={filteredData} hoverID={this.state.hoverID}/>
         </div>
       </div>
