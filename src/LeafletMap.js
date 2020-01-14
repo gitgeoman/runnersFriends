@@ -94,16 +94,8 @@ class LeafletMap extends Component {
 
 
 
-    createMarker(obiekt){
 
-      this.newPopup =  L.popup()
-      .setLatLng([obiekt.geometry.coordinates[1],obiekt.geometry.coordinates[0]])
-      .setContent(obiekt.properties.description.name)
-      .openOn(this.map);
-    }
-
-
-    componentDidUpdate({obiekty, geodata, popupOBJECTID}) {
+    componentDidUpdate({obiekty, geodata}) {
     // check if data has changed -->> sprawdzam co sie zmieniło w danych i wyzwalam funkcję
         if (this.props.obiekty !== geodata) {  
           this.updateMarkers(this.props.obiekty);
