@@ -41,7 +41,6 @@ class LeafletMap extends Component {
     let popupOBJECTID = this.props.hoverID;
     
 
-
     this.layerMarkers=L.geoJSON(geodata , {
         pointToLayer: function (feature, latlng) {//wstawia marker w postaci okręgu
             return L.circleMarker(latlng
@@ -92,26 +91,43 @@ class LeafletMap extends Component {
      .addTo(this.map);
     }
 
+    createMarkers(hoveredMarker){
+      //czyszczenie warstwy z markerami
+      //tworzenie nowej warstwy z markerami
+          this.specialLayer = L.geoJSON(hoveredMarker , {
+          pointToLayer: function (feature, latlng) 
+            {//wstawia marker w postaci okręgu
+              return L.circleMarker(latlng, 
+              ).bindPopup(feature.properties.description.name);
+              }
+        }
+       )
+     .addTo(this.map);
+    }
 
 
-
-    componentDidUpdate({obiekty, geodata}) {
+    componentDidUpdate({geodata}) {
     // check if data has changed -->> sprawdzam co sie zmieniło w danych i wyzwalam funkcję
         if (this.props.obiekty !== geodata) {  
           this.updateMarkers(this.props.obiekty);
         }
+     
 
-        if (this.props.hoverID){
-          //console.log(this.props.obiekty[aaa].geometry.coordinates);
-          this.createMarker(this.props.obiekty[this.props.hoverID]);
+    }//koniec componetdidupdate
+
+
+ componentDidUpdate({popupOBJECTID}) {
+    // check if data has changed -->> sprawdzam co sie zmieniło w danych i wyzwalam funkcję
+        
+        if (this.props.hoverID !== popupOBJECTID) {  
+          this.createMarkers(this.props.obiekty[this.props.hoverID]);
+        }else{this.createMarkers.clearLayers()
 
         }
 
-
-  
        
-
     }//koniec componetdidupdate
+
 
   render() {
     return <div className='fl w-50 pa2 vh-75' id="map"></div>

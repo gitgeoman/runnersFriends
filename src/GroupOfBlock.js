@@ -8,6 +8,8 @@ const GroupOfBlocks =({obiekty, onClickEvent})=>{
 	return (
 		<div id="boxGroup" className='fl w-50 pa2 vh-100'> 
 			{//https://tachyons.io/docs/layout/grid/
+
+				
 				obiekty.map((item, i)=>{
 					return (
 						<Block 
