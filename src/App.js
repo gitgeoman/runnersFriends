@@ -41,9 +41,6 @@ class App extends Component{
  
   }
 
-
-
-
   render(){
     const filteredData = this.state.obiekty.filter((obiekty)=>{
       return obiekty.properties.description.name.toLowerCase().includes(this.state.searchfield.toLowerCase())

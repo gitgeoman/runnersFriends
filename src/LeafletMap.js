@@ -119,24 +119,20 @@ class LeafletMap extends Component {
     }
 
 
-    componentDidUpdate({geodata}) {
-    // check if data has changed -->> sprawdzam co sie zmieniło w danych i wyzwalam funkcję
-        if (this.props.obiekty !== geodata) {  
-          this.updateMarkers(this.props.obiekty);
-        }
-     
-
-    }//koniec componetdidupdate
+   
 
 
-    componentDidUpdate({popupOBJECTID}) {
+    componentDidUpdate({popupOBJECTID, geodata}) {
     // check if data has changed -->> sprawdzam co sie zmieniło w danych i wyzwalam funkcję
         
         if (this.props.hoverID !== popupOBJECTID) {  
           this.createMarkers(this.props.obiekty[this.props.hoverID]);
         }else{
            //jaki warunek żeby dało się usuwać warstwę po zmianie stanu hovera
-        }       
+        }     
+        if (this.props.obiekty !== geodata) {  
+          this.updateMarkers(this.props.obiekty);
+        }  
     }//koniec componetdidupdate
 
 
