@@ -94,15 +94,28 @@ class LeafletMap extends Component {
     createMarkers(hoveredMarker){
       //czyszczenie warstwy z markerami
       //tworzenie nowej warstwy z markerami
+          if(this.specialLayer){
+            this.specialLayer.clearLayers();
+          }
           this.specialLayer = L.geoJSON(hoveredMarker , {
           pointToLayer: function (feature, latlng) 
             {//wstawia marker w postaci okręgu
-              return L.circleMarker(latlng, 
+              return L.circleMarker(latlng, {
+                                                radius: 8,
+                                                fillColor: "#ff7800",
+                                                color: "#000",
+                                                weight: 1,
+                                                opacity: 1,
+                                                fillOpacity: 0.8
+                                            }
               ).bindPopup(feature.properties.description.name);
               }
         }
-       )
-     .addTo(this.map);
+        ).addTo(this.map);
+      
+
+
+
     }
 
 
@@ -116,16 +129,14 @@ class LeafletMap extends Component {
     }//koniec componetdidupdate
 
 
- componentDidUpdate({popupOBJECTID}) {
+    componentDidUpdate({popupOBJECTID}) {
     // check if data has changed -->> sprawdzam co sie zmieniło w danych i wyzwalam funkcję
         
         if (this.props.hoverID !== popupOBJECTID) {  
           this.createMarkers(this.props.obiekty[this.props.hoverID]);
-        }else{this.createMarkers.clearLayers()
-
-        }
-
-       
+        }else{
+           //jaki warunek żeby dało się usuwać warstwę po zmianie stanu hovera
+        }       
     }//koniec componetdidupdate
 
 

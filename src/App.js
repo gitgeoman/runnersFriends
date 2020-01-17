@@ -38,11 +38,7 @@ class App extends Component{
 
   onMouseHover=(data)=>{
       this.setState({hoverID:(data.target.id)?data.target.id:''})
-      this.setState({toggle:true});
-  }
-
-  onMousouter=()=>{
-    this.setState({toggole:false});
+ 
   }
 
 
