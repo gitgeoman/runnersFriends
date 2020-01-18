@@ -2,7 +2,7 @@ import React from 'react';
 import Block from './Block.js';
 import './GroupOfBlock.css';
 
-const GroupOfBlocks =({obiekty, onClickEvent})=>{
+const GroupOfBlocks =({obiekty, onClickEvent, onOut})=>{
 	//console.log(obiekty.features);
 	//let arrayObjects = obiekty.features;//tutaj tworze tabele
 	return (
@@ -18,6 +18,7 @@ const GroupOfBlocks =({obiekty, onClickEvent})=>{
 							name={item.properties.description.name}
 							specification={item.properties.description.specification}
 							onclick={onClickEvent}
+							onOut={onOut}
 							//coordinates={item.geometry.coordinates}
 						/>
 						//<div>{item.properties.id}</div>

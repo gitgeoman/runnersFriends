@@ -39,6 +39,8 @@ class LeafletMap extends Component {
     //obiekt geojson przepisany do zmiennej
     let geodata = this.props.obiekty; // tak odwołuję się do obiektu który jest wysłany przez rodzica
     let popupOBJECTID = this.props.hoverID;
+    let toggle = this.props.toggle;
+    console.log(toggle);
     
 
     this.layerMarkers=L.geoJSON(geodata , {
@@ -112,27 +114,25 @@ class LeafletMap extends Component {
               }
         }
         ).addTo(this.map);
-      
-
-
-
     }
 
-
-   
-
-
-    componentDidUpdate({popupOBJECTID, geodata}) {
+    componentDidUpdate({popupOBJECTID, geodata, toggle}) {
     // check if data has changed -->> sprawdzam co sie zmieniło w danych i wyzwalam funkcję
-        
-        if (this.props.hoverID !== popupOBJECTID) {  
-          this.createMarkers(this.props.obiekty[this.props.hoverID]);
-        }else{
-           //jaki warunek żeby dało się usuwać warstwę po zmianie stanu hovera
-        }     
-        if (this.props.obiekty !== geodata) {  
-          this.updateMarkers(this.props.obiekty);
-        }  
+        if (this.props.toggle !== toggle || this.props.obiekty !== geodata){
+           this.updateMarkers(this.props.obiekty);
+           if (this.props.hoverID !== popupOBJECTID && this.props.hoverID!=''){
+            this.createMarkers(this.props.obiekty[Number(this.props.hoverID)-1]); 
+           }else{
+
+           }
+        }
+
+
+        /*
+       coś się zmieniło najechane lub nie to potem sprawdzam ktory jest najechany
+        */
+
+
     }//koniec componetdidupdate
 
 
