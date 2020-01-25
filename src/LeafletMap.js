@@ -19,10 +19,6 @@ let DefaultIcon = L.icon({
         });
         L.Marker.prototype.options.icon = DefaultIcon;
 
-
-
-
-
 class LeafletMap extends Component {
   componentDidMount() {
     // create map
@@ -54,30 +50,6 @@ class LeafletMap extends Component {
       }
       ).addTo(this.map);
 
-/*
-    //dane  geojson typu multilinia
-    this.layerMultiLine=L.geoJSON(myRun, {
-    style: function (feature) {
-        return {color: "red"};
-    }
-    }).addTo(this.map);
-
-    //bieganie punkty z geojson
-    this.layerPoint=L.geoJSON(myRunPoints , {
-        pointToLayer: function (feature, latlng) 
-          {//wstawia marker w postaci okręgu
-            return L.circleMarker(latlng, 
-            ).bindPopup(feature.properties.time);
-            }
-      }
-      ).addTo(this.map);
-    // add marker
-    this.marker = L.circleMarker([52.3, 21.0]).addTo(this.map);
-
-    //table of latLng coordinates
-    //loop on every coordinates and make latLng
-    //loop on every latLng to make marker and push it to the table
-*/
   } //koniec Component didMount
 
     updateMarkers(markersData) {
@@ -118,21 +90,17 @@ class LeafletMap extends Component {
 
     componentDidUpdate({popupOBJECTID, geodata, toggle}) {
     // check if data has changed -->> sprawdzam co sie zmieniło w danych i wyzwalam funkcję
-        if (this.props.toggle !== toggle || this.props.obiekty !== geodata){
-           this.updateMarkers(this.props.obiekty);
-           if (this.props.hoverID !== popupOBJECTID && this.props.hoverID!=''){
-            this.createMarkers(this.props.obiekty[Number(this.props.hoverID)-1]); 
-           }else{
-
+        if (this.props.toggle !== toggle || this.props.obiekty !== geodata){//jezeli zmienil sie toggle lub zmienil sie input data
+           this.updateMarkers(this.props.obiekty); //aktualizuj obiekty
+           if (this.props.hoverID !== popupOBJECTID && this.props.hoverID!=''){ //jezeli najechano na hovera i hover ma wartosc to
+               this.createMarkers(this.props.obiekty[Number(this.props.hoverID)-1])
+           }
+           if (this.props.toggle==false){
+              if(this.specialLayer){
+                  this.specialLayer.clearLayers();
+              }
            }
         }
-
-
-        /*
-       coś się zmieniło najechane lub nie to potem sprawdzam ktory jest najechany
-        */
-
-
     }//koniec componetdidupdate
 
 
