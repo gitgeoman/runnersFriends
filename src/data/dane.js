@@ -43,7 +43,7 @@ export const geojsonFeature = {
         "id": 2,
          "description": {
                                     "name":"John Simpson",
-                                    "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 1 "
+                                    "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 2 "
                                     },
         "miniaturka" : "http://pngimg.com/uploads/globe/globe_PNG62.png",
         "symbol_circle": {
@@ -78,7 +78,7 @@ export const geojsonFeature = {
         "id": 3,
          "description": {
                                     "name":"Geralt of Rivia",
-                                    "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 1 "
+                                    "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 3 "
                                     },
         "miniaturka" : "http://pngimg.com/uploads/globe/globe_PNG62.png",
         "symbol_circle": {
@@ -113,7 +113,7 @@ export const geojsonFeature = {
         "id": 4,
         "description": {
                                     "name":"John Snow",
-                                    "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 1 "
+                                    "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 4 "
                                     },
         "miniaturka" : "http://pngimg.com/uploads/globe/globe_PNG62.png",
         "symbol_circle": {
@@ -148,7 +148,7 @@ export const geojsonFeature = {
         "id": 5,
         "description": {
                                     "name":"Batman",
-                                    "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 1 "
+                                    "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 5 "
                                     },
         "miniaturka" : "http://pngimg.com/uploads/globe/globe_PNG62.png",
         "symbol_circle": {
@@ -183,7 +183,7 @@ export const geojsonFeature = {
           "id": 6,
            "description": {
                                     "name":"Zawisza",
-                                    "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 1 "
+                                    "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 6 "
                                     },
           "miniaturka" : "http://pngimg.com/uploads/globe/globe_PNG62.png",
           "symbol_circle": {
@@ -218,7 +218,7 @@ export const geojsonFeature = {
           "id": 7,
            "description": {
                                     "name":"Ragnar",
-                                    "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 1 "
+                                    "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 7 "
                                     },
           "miniaturka" : "http://pngimg.com/uploads/globe/globe_PNG62.png",
           "symbol_circle": {
@@ -253,7 +253,7 @@ export const geojsonFeature = {
         "id": 8,
          "description": {
                                     "name":"Farurej",
-                                    "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 1 "
+                                    "specification":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 8 "
                                     },
         "miniaturka" : "http://pngimg.com/uploads/globe/globe_PNG62.png",
         "symbol_circle": {
