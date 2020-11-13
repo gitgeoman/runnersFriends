@@ -87,7 +87,7 @@ class LeafletMap extends Component {
     }
 
     componentDidUpdate({popupOBJECTID, geodata, toggle}) {
-    // -->> sprawdzam co sie zmieniło w danych 
+    // check if data has changed -->> sprawdzam co sie zmieniło w danych i wyzwalam funkcję
         if (this.props.toggle !== toggle || this.props.obiekty !== geodata){//jezeli zmienil sie toggle lub zmienil sie input data
            this.updateMarkers(this.props.obiekty); //aktualizuj obiekty
            if (this.props.hoverID !== popupOBJECTID && this.props.hoverID!=''){ //jezeli najechano na hovera i hover ma wartosc to
